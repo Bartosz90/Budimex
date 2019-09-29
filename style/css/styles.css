@@ -3,6 +3,7 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  scrollbar-track-color: #ebbd34;
 }
 
 body {
@@ -119,7 +120,7 @@ body button span {
 
 @media (max-width: 900px) {
   .nav {
-    width: 50vw;
+    width: 60vw;
     height: 100vh;
     padding: 0 10px 10px 10px;
     -webkit-transform: translateX(-107%);
@@ -130,6 +131,8 @@ body button span {
 
 @media (orientation: portrait) {
   .nav {
+    -ms-flex-line-pack: center;
+        align-content: center;
     width: 80vw;
   }
 }
@@ -186,6 +189,12 @@ body button span {
             animation: none;
     width: 100%;
     font-size: 2rem;
+  }
+}
+
+@media (orientation: portrait) {
+  .nav .logo {
+    margin-bottom: 35px;
   }
 }
 
@@ -267,8 +276,6 @@ body button span {
 }
 
 .nav .navBtn {
-  -ms-flex-item-align: end;
-      align-self: flex-end;
   margin: 0 5px;
   padding: 20px 10px;
   border-radius: 4px;
@@ -284,7 +291,7 @@ body button span {
 @media (orientation: portrait) {
   .nav .navBtn {
     width: 100%;
-    margin: 0;
+    margin: 10px 0;
   }
 }
 
@@ -295,6 +302,12 @@ body button span {
           box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
+@media (max-width: 900px) {
+  .nav .navBtn.active {
+    z-index: 2;
+  }
+}
+
 .nav .hamburger {
   position: absolute;
   top: 10px;
@@ -303,6 +316,7 @@ body button span {
   height: 50px;
   background-color: transparent;
   font-size: 2rem;
+  color: #ebbd34;
 }
 
 .nav .hamburger .fa-times, .nav .hamburger .fa-bars {
@@ -377,9 +391,15 @@ body button span {
       flex-wrap: wrap;
   opacity: 0;
   visibility: hidden;
+  display: none;
+  background-color: #2b2a26;
+  color: #ebbd34;
 }
 
 .main .mainSection.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   visibility: visible;
   -webkit-animation: appear .6s linear forwards;
           animation: appear .6s linear forwards;

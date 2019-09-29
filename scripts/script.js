@@ -12,7 +12,7 @@ window.onload = function() {
     nav.style.position = "fixed";
     nav.style.zIndex = "3";
     main.style.position = "static";
-  }, 3000);
+  }, 2500);
 };
 
 main.addEventListener("click", () => {
