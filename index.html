@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="shortcut icon" href="img/favicon.ico" />
     <link
       href="https://fonts.googleapis.com/css?family=Be+Vietnam:400,700&display=swap&subset=latin-ext"
       rel="stylesheet"
@@ -33,17 +34,35 @@
       <button class="hamburger">
         <i class="fas fa-bars"></i><i class="fas fa-times"></i>
       </button>
-      <button class="navBtn home active">
-        <i class="fas fa-home"></i><span></span>
+      <button class="navBtn home active" data-target="home">
+        <i class="fas fa-home" data-target="home"></i><span></span data-target="home">
       </button>
-      <button class="navBtn about">About<span></span></button>
-      <button class="navBtn services">Services<span></span></button>
-      <button class="navBtn projects">Projects<span></span></button>
-      <button class="navBtn gellery">Gallery<span></span></button>
-      <button class="navBtn contact">Contact<span></span></button>
+      <button class="navBtn about" data-target="about">
+        o firmie<span data-target="about"></span>
+      </button>
+      <button class="navBtn services" data-target="services">
+        usługi<span data-target="services"></span>
+      </button>
+      <button class="navBtn projects" data-target="projects">
+        projekty<span data-target="projects"></span>
+      </button>
+      <button class="navBtn gellery" data-target="gallery">
+        galeria<span data-target="gallery"></span>
+      </button>
+      <button class="navBtn contact" data-target="contact">
+        kontakt<span data-target="contact"></span>
+      </button>
     </nav>
 
-    <main class="main"></main>
+    <main class="main">
+      <!-- HOME -->
+      <section class="mainSection home active"><h1>STRONA GŁÓWNA</h1></section>
+      <section class="mainSection about"><h1>O FIRMIE</h1></section>
+      <section class="mainSection services"><h1>USŁUGI</h1></section>
+      <section class="mainSection projects"><h1>PROJEKTY</h1></section>
+      <section class="mainSection gallery"><h1>GALERIA</h1></section>
+      <section class="mainSection contact"><h1>KONTAKT</h1></section>
+    </main>
 
     <script src="./scripts/script.js"></script>
   </body>

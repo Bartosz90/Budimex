@@ -12,11 +12,6 @@ body {
   color: #2b2a26;
 }
 
-body .mainSection {
-  width: 100vw;
-  min-height: 100vh;
-}
-
 body button {
   position: relative;
   padding: 10px;
@@ -32,6 +27,7 @@ body button {
   background-color: #ebbd34;
   z-index: 1;
   overflow-y: hidden;
+  outline-color: #2b2a26;
 }
 
 body button span {
@@ -123,8 +119,9 @@ body button span {
   .nav {
     width: 50vw;
     height: 100vh;
-    -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
+    padding: 0 10px 10px 10px;
+    -webkit-transform: translateX(-103%);
+            transform: translateX(-103%);
     z-index: 2;
   }
 }
@@ -272,8 +269,7 @@ body button span {
       align-self: flex-end;
   margin: 0 5px;
   padding: 20px 10px;
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
+  border-radius: 4px;
 }
 
 @media (max-width: 900px) {
@@ -281,7 +277,6 @@ body button span {
     width: 50%;
     margin: 0;
     padding: 10px;
-    border-radius: 4px;
   }
 }
 
@@ -294,12 +289,14 @@ body button span {
 .nav .navBtn.active {
   background-color: #2b2a26;
   color: #ebbd34;
+  -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+          box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
 .nav .hamburger {
   position: absolute;
   top: 10px;
-  right: -50px;
+  right: -55px;
   width: 50px;
   height: 50px;
   background-color: transparent;
@@ -344,7 +341,6 @@ body button span {
   top: 0;
   left: 0;
   padding: 10px;
-  z-index: 1;
   width: 100vw;
   min-height: 100vh;
   display: -webkit-box;
@@ -358,4 +354,61 @@ body button span {
           align-items: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+}
+
+.main .mainSection {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.main .mainSection.active {
+  visibility: visible;
+  -webkit-animation: appear .6s linear forwards;
+          animation: appear .6s linear forwards;
+}
+
+@-webkit-keyframes appear {
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes appear {
+  100% {
+    opacity: 1;
+  }
+}
+
+.main .mainSection.disappear {
+  opacity: 1;
+  -webkit-animation: disappear .6s linear forwards;
+          animation: disappear .6s linear forwards;
+}
+
+@-webkit-keyframes disappear {
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes disappear {
+  100% {
+    opacity: 0;
+  }
 }
