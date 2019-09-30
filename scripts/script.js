@@ -6,11 +6,16 @@ const main = document.querySelector(".main");
 
 window.onload = function() {
   if (window.innerWidth < 901) {
-    this.setTimeout(() => nav.classList.remove("active"), 2500);
+    setTimeout(() => nav.classList.remove("active"), 2500);
   }
-  this.setTimeout(() => {
+  if (window.innerWidth > 900) {
+    setTimeout(() => {
+      toggleTheme.style.zIndex = "30";
+    }, 2500);
+  }
+  setTimeout(() => {
     nav.style.position = "fixed";
-    nav.style.zIndex = "3";
+    nav.style.zIndex = "20";
     main.style.position = "static";
   }, 2500);
 };
@@ -53,5 +58,15 @@ navBtns.forEach(btn => {
         });
       }
     });
+  });
+});
+
+// Toggle Light / Dark theme
+
+const toggleTheme = document.querySelector(".toggleTheme");
+
+toggleTheme.addEventListener("click", () => {
+  sections.forEach(section => {
+    section.classList.toggle("light");
   });
 });

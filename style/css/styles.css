@@ -29,7 +29,7 @@ body button {
   cursor: pointer;
   background-color: #ebbd34;
   z-index: 1;
-  overflow-y: hidden;
+  overflow: hidden;
   outline-color: #2b2a26;
 }
 
@@ -97,6 +97,44 @@ body button span {
     display: none;
     visibility: hidden;
   }
+}
+
+.toggleTheme {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  font-size: 2rem;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+@media (min-width: 1024px) {
+  .toggleTheme {
+    top: 25px;
+  }
+  .toggleTheme:hover {
+    color: #2b2a26;
+  }
+}
+
+@media (max-width: 1024px) {
+  .toggleTheme {
+    color: #ebbd34;
+    background-color: rgba(43, 42, 38, 0.9);
+  }
+  .toggleTheme:hover {
+    color: #ebbd34;
+  }
+}
+
+.toggleTheme .fas {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 .nav {
@@ -281,6 +319,7 @@ body button span {
   margin: 0 5px;
   padding: 20px 10px;
   border-radius: 4px;
+  overflow: hidden;
 }
 
 @media (max-width: 900px) {
@@ -313,11 +352,11 @@ body button span {
 .nav .hamburger {
   position: absolute;
   top: 10px;
-  right: -80px;
-  width: 50px;
-  height: 50px;
+  right: -70px;
+  width: 40px;
+  height: 40px;
   background-color: rgba(43, 42, 38, 0.9);
-  border-radius: 50%;
+  border-radius: 4px;
   font-size: 2rem;
   color: #ebbd34;
 }
@@ -404,6 +443,13 @@ body button span {
   display: none;
   background-color: #2b2a26;
   color: #ebbd34;
+  -webkit-transition: .4s linear;
+  transition: .4s linear;
+}
+
+.main .mainSection.light {
+  color: #2b2a26;
+  background-color: #fff;
 }
 
 .main .mainSection.active {
@@ -445,6 +491,17 @@ body button span {
   }
 }
 
+.main p, .main ul, .main li {
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+@media (max-width: 1024px) {
+  .main p, .main ul, .main li {
+    font-size: 1.3rem;
+  }
+}
+
 .main .mainSection.home h1 {
   width: 100%;
   margin-bottom: 20px;
@@ -478,8 +535,6 @@ body button span {
   cursor: pointer;
   border-bottom: 3px solid #ebbd34;
   overflow: hidden;
-  -webkit-transition: .2s linear;
-  transition: .2s linear;
 }
 
 .main .mainSection.home span:hover {
@@ -487,12 +542,67 @@ body button span {
   border-bottom-color: #e6ac02;
 }
 
+.main .mainSection.about h3 {
+  width: 100%;
+  margin-top: 30px;
+  font-size: 2.2rem;
+  text-align: center;
+}
+
+@media (max-width: 1025px) {
+  .main .mainSection.about h3 {
+    font-size: 1.8rem;
+  }
+}
+
+.main .mainSection.about p {
+  margin: 30px 0;
+}
+
+.main .mainSection.about article {
+  width: 50%;
+}
+
+@media (max-width: 1025px) {
+  .main .mainSection.about article {
+    width: 90%;
+  }
+}
+
+.main .mainSection.about ul {
+  width: 90%;
+  margin: 0 auto;
+  list-style: none;
+}
+
+@media (max-width: 1025px) {
+  .main .mainSection.about ul {
+    width: 100%;
+  }
+}
+
+.main .mainSection.about li {
+  margin: 10px 0;
+  text-align: left;
+}
+
+.main .mainSection.about li i {
+  width: 50px;
+}
+
+@media (max-width: 1025px) {
+  .main .mainSection.about li i {
+    width: auto;
+    margin-right: 10px;
+  }
+}
+
 .footer {
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100vw;
-  height: 40px;
+  height: 30px;
   background-color: #ebbd34;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -524,11 +634,13 @@ body button span {
 
 .footer p {
   margin: 0 100px;
+  font-size: 18px;
 }
 
 @media (max-width: 1024px) {
   .footer p {
     margin: 0 20px;
+    font-size: 16px;
   }
 }
 

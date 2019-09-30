@@ -36,7 +36,7 @@ body
         cursor: pointer
         background-color: $yellow
         z-index: 1
-        overflow-y: hidden
+        overflow: hidden
         outline-color: $dark
         span    
             position: absolute 
@@ -75,7 +75,31 @@ body
             display: none 
             visibility: hidden 
             
-    
+.toggleTheme    
+    position: fixed 
+    top: 10px
+    right: 10px 
+    width: 40px
+    height: 40px
+    font-size: 2rem
+    border-radius: 4px
+    background-color: transparent
+    @media (min-width: 1024px)
+        top: 25px
+        &:hover 
+            color: $dark
+    @media (max-width: 1024px)
+        color: $yellow
+        background-color: rgba(43,42,38,.9)
+        &:hover 
+            color: $yellow
+    .fas 
+        position: absolute 
+        top: 50% 
+        left: 50% 
+        transform: translate(-50%,-50%)
+
+
 
 .nav 
     width: 100vw
@@ -151,6 +175,7 @@ body
         margin: 0 5px
         padding: 20px 10px
         border-radius: 4px
+        overflow: hidden
         @media (max-width: 900px) 
             width: 45%
             padding: 10px
@@ -166,11 +191,11 @@ body
     .hamburger 
         position: absolute 
         top: 10px 
-        right: - 80px
-        width: 50px
-        height: 50px
+        right: - 70px
+        width: 40px
+        height: 40px
         background-color: rgba(43,42,38,.9)
-        border-radius: 50%
+        border-radius: 4px
         font-size: 2rem
         color: $yellow
         .fa-times, .fa-bars 
@@ -214,6 +239,10 @@ body
         display: none
         background-color: $dark
         color: $yellow
+        transition: .4s linear
+    .mainSection.light 
+        color: $dark 
+        background-color: #fff
     .mainSection.active
         display: flex
         visibility: visible
@@ -227,6 +256,13 @@ body
         @keyframes disappear
             100% 
                 opacity: 0
+    p, ul, li 
+        font-size: 1.6rem
+        text-align: center
+        @media (max-width: 1024px)
+            font-size: 1.3rem
+        @media (max-width: 520px)
+            font-size: 
 
 .main 
     .mainSection.home 
@@ -251,16 +287,50 @@ body
             cursor: pointer
             border-bottom: 3px solid $yellow
             overflow: hidden
-            transition: .2s linear
+            // transition: .2s linear
             &:hover
                 color: $yellowHover 
                 border-bottom-color: $yellowHover
+
+.main 
+    .mainSection.about
+        h3 
+            width: 100% 
+            margin-top: 30px
+            font-size: 2.2rem
+            text-align: center
+            @media (max-width: 1025px)
+                font-size: 1.8rem
+        p 
+            margin: 30px 0
+        article 
+            width: 50%
+            @media (max-width: 1025px)
+                width: 90%
+        ul 
+            width: 90%
+            margin: 0 auto
+            list-style: none
+            @media (max-width: 1025px)
+                width: 100%
+        li
+            margin: 10px 0
+            text-align: left
+            i 
+                width: 50px
+                @media (max-width: 1025px)
+                    width: auto
+                    margin-right: 10px
+
+
+
+
 .footer 
     position: fixed 
     bottom: 0
     left: 0
     width: 100vw 
-    height: 40px 
+    height: 30px 
     background-color: $yellow
     +flexCenter()
     justify-content: space-between
@@ -271,8 +341,10 @@ body
         justify-content: center
     p 
         margin: 0 100px
+        font-size: 18px
         @media (max-width: 1024px)
             margin: 0 20px
+            font-size: 16px
         @media (orientation: portrait)
             width: 100% 
             text-align: center
