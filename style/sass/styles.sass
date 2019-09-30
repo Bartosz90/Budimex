@@ -375,7 +375,90 @@ body.light
                     100% 
                         opacity: 1
 
-
+.main 
+    .mainSection.projects 
+        h3 
+            margin-bottom: 100px
+            @media (max-width: 1024px)
+                margin-bottom: 20px
+            @media (orientation: portrait)
+                margin-top: 50px
+        .owl-carousel 
+            width: 100% 
+            .project 
+                position: relative
+                height: 350px 
+                width: 30vw
+                margin: 0 auto
+                border: 5px solid $yellow 
+                border-radius: 4px
+                background-position: center 
+                background-size: cover
+                +flexCenter()
+                z-index: 1
+                overflow: hidden
+                @media (max-width: 1024px)
+                    width: 70vw
+                    height: 250px
+                @media (orientation: portrait)
+                    width: 90%
+                    height: 400px
+                &::before 
+                    content: ""
+                    position: absolute 
+                    top: 0
+                    left: 0
+                    width: 90% 
+                    height: 100% 
+                    padding-left: 20px 
+                    padding-right: 100px
+                    +flexCenter()
+                    transform: translateY(-130%)
+                    text-align: left
+                    background-color: rgba(43,42,38,.7)
+                    transition: .3s linear
+                &:hover 
+                    &::before 
+                        transform: none
+                p 
+                    position: absolute 
+                    bottom: 0
+                    left: 0
+                    height: 50px 
+                    width: 100%
+                    +flexCenter()
+                    background-color: $yellow 
+                    color: $dark
+                    text-transform: uppercase
+                    z-index: 2
+                    @media (max-width: 1024px)
+                        font-size: 1.1rem
+            .project1 
+                background-image: url('../../img/pro1.jpg')
+                &::before 
+                    content: "Wieżowiec w Nowym Jorku (w dzielnicy Midtown w okręgu Manhattan) w Stanach Zjednoczonych, jeden z najbardziej rozpoznawalnych symboli nie tylko miasta, ale także całego kraju. Jego nazwa pochodzi od przydomku stanu Nowy Jork, który brzmi właśnie Empire State."
+            .project2 
+                background-image: url('../../img/pro2.jpg')
+                &::before 
+                    content: "Most zwodzony w Londynie (mylony niekiedy z sąsiednim Mostem Londyńskim, London Bridge) przeprowadzony przez Tamizę w pobliżu Tower of London, od której bierze swą nazwę. Jeden z najbardziej znanych obiektów w Londynie, zbudowany w stylu wiktoriańskim"
+            .project3
+                background-image: url('../../img/pro3.jpg')
+                &::before 
+                    content: "Dwie wieże w Kuala Lumpur, stolicy Malezji, o wysokości 452 metrów, jedne z najwyższych budowli świata. Zachowują one tytuł najwyższych bliźniaczych wież świata oraz budynków zbudowanych przed końcem XX wieku. Dwa drapacze chmur są połączone przejściem (mostem) o długości 58 m na poziomie 41. i 42. piętra."
+            .project4 
+                background-image: url('../../img/pro4.jpg')
+                &::before 
+                    content: "Budynek w stylu nowoczesnego ekspresjonizmu, położony na przylądku Bennelong Point w Sydney."
+            .project5 
+                background-image: url('../../img/pro5.jpg')
+                &::before 
+                    content: "Wieżowiec w Dubaju, jeden z najwyższych i najbardziej luksusowych hoteli na świecie. Znajduje się w Dubaju, w Zjednoczonych Emiratach Arabskich, i stanowi część kompleksu wypoczynkowego Jumeirah Beach Resort. Budynek hotelu stoi na sztucznej wyspie położonej 280 m od plaży w Zatoce Perskiej. Kształtem przypomina żagiel, ma 321 m wysokości."
+        .owl-nav 
+            +flexCenter()
+            margin-top: 20px
+            font-size: 2rem
+            .arrowBtn 
+                margin: 0 20px
 
 
 

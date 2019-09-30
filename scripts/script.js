@@ -112,3 +112,40 @@ serviceTabs.forEach(tab => {
     });
   });
 });
+
+// owl carusel
+$(document).ready(function() {
+  $(".owl-carousel").owlCarousel();
+});
+
+const owl = $(".owl-carousel");
+owl.owlCarousel({
+  items: 3,
+  nav: true,
+  center: true,
+  loop: true,
+  autoplay: true,
+  autoplayTimeout: 3000,
+  autoplayHoverPause: true,
+  navText: [
+    `<i class="fas fa-arrow-left arrowBtn"></i>`,
+    `<i class="fas fa-arrow-right arrowBtn"></i>`
+  ],
+  slideTransition: `ease-in-out`,
+  responsive: {
+    0: {
+      items: 1,
+      margin: 0
+    },
+
+    1024: {
+      items: 3
+    }
+  }
+});
+$(".play").on("click", function() {
+  owl.trigger("play.owl.autoplay", [1000]);
+});
+$(".stop").on("click", function() {
+  owl.trigger("stop.owl.autoplay");
+});
