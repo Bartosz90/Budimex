@@ -21,12 +21,14 @@ body
     overflow-x: hidden
     font-family: 'Be Vietnam', sans-serif
     color: $dark
+    background-color: $dark
     button 
         position: relative
         padding: 10px
         transition: .2s linear
         border: none
         color: $dark
+        font-family: inherit
         font-size: 1.2rem
         font-weight: bold
         letter-spacing: 2px
@@ -35,7 +37,6 @@ body
         background-color: $yellow
         z-index: 1
         overflow-y: hidden
-        // outline: none
         outline-color: $dark
         span    
             position: absolute 
@@ -47,8 +48,6 @@ body
             z-index: -1
             transform: translateY(100%)
             transition: .2s
-        &:focus 
-            // box-shadow: 0 0 0 3px $dark
         @media (min-width: 900px)
             &:hover 
                 color: $yellow 
@@ -64,6 +63,7 @@ body
     background-color: #fff 
     z-index: 2
     animation: fadeOut 1s linear forwards 2.5s
+    // display: none
     @media (max-width: 900px)
         animation: none 
         display: none
@@ -166,10 +166,11 @@ body
     .hamburger 
         position: absolute 
         top: 10px 
-        right: - 70px
+        right: - 80px
         width: 50px
         height: 50px
-        background-color: transparent 
+        background-color: rgba(43,42,38,.9)
+        border-radius: 50%
         font-size: 2rem
         color: $yellow
         .fa-times, .fa-bars 
@@ -184,6 +185,7 @@ body
 .nav.active 
     transform: none
     .hamburger 
+        right: -55px
         .fa-bars 
             transform: translate(-50%,-50%) scale(0)
         .fa-times 
@@ -204,7 +206,9 @@ body
         left: 0
         width: 100vw
         min-height: 100vh
+        padding-bottom: 40px
         +flexCenter()
+        align-content: center
         opacity: 0
         visibility: hidden
         display: none
@@ -223,6 +227,57 @@ body
         @keyframes disappear
             100% 
                 opacity: 0
+
+.main 
+    .mainSection.home 
+        h1 
+            width: 100% 
+            margin-bottom: 20px
+            padding: 0 20px
+            font-size: 3rem
+            text-align: center
+            @media (max-width: 1024px)
+                font-size: 2.5rem
+        p 
+            padding: 0 350px
+            text-align: center
+            font-size: 2rem
+            @media (max-width: 1024px)
+                padding: 0 20px
+                font-size: 1.5rem
+        span 
+            position: relative
+            padding: 0 5px
+            cursor: pointer
+            border-bottom: 3px solid $yellow
+            overflow: hidden
+            transition: .2s linear
+            &:hover
+                color: $yellowHover 
+                border-bottom-color: $yellowHover
+.footer 
+    position: fixed 
+    bottom: 0
+    left: 0
+    width: 100vw 
+    height: 40px 
+    background-color: $yellow
+    +flexCenter()
+    justify-content: space-between
+    color: $dark
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)
+    @media (orientation: portrait)
+        height: auto
+        justify-content: center
+    p 
+        margin: 0 100px
+        @media (max-width: 1024px)
+            margin: 0 20px
+        @media (orientation: portrait)
+            width: 100% 
+            text-align: center
+
+
 
         
 @import 'preloader'

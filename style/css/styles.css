@@ -11,6 +11,7 @@ body {
   overflow-x: hidden;
   font-family: 'Be Vietnam', sans-serif;
   color: #2b2a26;
+  background-color: #2b2a26;
 }
 
 body button {
@@ -20,6 +21,7 @@ body button {
   transition: .2s linear;
   border: none;
   color: #2b2a26;
+  font-family: inherit;
   font-size: 1.2rem;
   font-weight: bold;
   letter-spacing: 2px;
@@ -311,10 +313,11 @@ body button span {
 .nav .hamburger {
   position: absolute;
   top: 10px;
-  right: -70px;
+  right: -80px;
   width: 50px;
   height: 50px;
-  background-color: transparent;
+  background-color: rgba(43, 42, 38, 0.9);
+  border-radius: 50%;
   font-size: 2rem;
   color: #ebbd34;
 }
@@ -340,6 +343,10 @@ body button span {
 .nav.active {
   -webkit-transform: none;
           transform: none;
+}
+
+.nav.active .hamburger {
+  right: -55px;
 }
 
 .nav.active .hamburger .fa-bars {
@@ -378,6 +385,7 @@ body button span {
   left: 0;
   width: 100vw;
   min-height: 100vh;
+  padding-bottom: 40px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -389,6 +397,8 @@ body button span {
           align-items: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -ms-flex-line-pack: center;
+      align-content: center;
   opacity: 0;
   visibility: hidden;
   display: none;
@@ -432,5 +442,99 @@ body button span {
 @keyframes disappear {
   100% {
     opacity: 0;
+  }
+}
+
+.main .mainSection.home h1 {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 0 20px;
+  font-size: 3rem;
+  text-align: center;
+}
+
+@media (max-width: 1024px) {
+  .main .mainSection.home h1 {
+    font-size: 2.5rem;
+  }
+}
+
+.main .mainSection.home p {
+  padding: 0 350px;
+  text-align: center;
+  font-size: 2rem;
+}
+
+@media (max-width: 1024px) {
+  .main .mainSection.home p {
+    padding: 0 20px;
+    font-size: 1.5rem;
+  }
+}
+
+.main .mainSection.home span {
+  position: relative;
+  padding: 0 5px;
+  cursor: pointer;
+  border-bottom: 3px solid #ebbd34;
+  overflow: hidden;
+  -webkit-transition: .2s linear;
+  transition: .2s linear;
+}
+
+.main .mainSection.home span:hover {
+  color: #e6ac02;
+  border-bottom-color: #e6ac02;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 40px;
+  background-color: #ebbd34;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: #2b2a26;
+  -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+          box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+@media (orientation: portrait) {
+  .footer {
+    height: auto;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+.footer p {
+  margin: 0 100px;
+}
+
+@media (max-width: 1024px) {
+  .footer p {
+    margin: 0 20px;
+  }
+}
+
+@media (orientation: portrait) {
+  .footer p {
+    width: 100%;
+    text-align: center;
   }
 }
