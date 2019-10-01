@@ -157,7 +157,7 @@ const img = document.querySelectorAll(".img");
 const zoomedImgContainer = document.querySelector(".zoom");
 const zoomedImg = document.querySelector(".zoomImage img");
 const arrows = document.querySelectorAll(".changeImgBtn");
-const closeZoom = document.querySelector(".closeImgBtn");
+const closeZoomBtn = document.querySelector(".closeImgBtn");
 let imgIndex = 1;
 
 img.forEach(img => img.addEventListener("click", zoomImg));
@@ -191,7 +191,10 @@ function changeImg(e) {
   }, 800);
 }
 
-closeZoom.addEventListener("click", () => {
+closeZoomBtn.addEventListener("click", closeZoom);
+zoomedImg.addEventListener("click", closeZoom);
+
+function closeZoom() {
   gallery.style.zIndex = "0";
   zoomedImgContainer.classList.remove("active");
-});
+}
