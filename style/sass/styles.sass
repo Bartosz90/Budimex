@@ -64,12 +64,12 @@ body.light
     left: 0
     background-color: $yellow
     z-index: 2
-    animation: fadeOut 1s linear forwards 2.5s
+    animation: preloaderFadeOut 1s linear forwards 2.5s
     // display: none
     @media (max-width: 900px)
         animation: none 
         display: none
-    @keyframes fadeOut 
+    @keyframes preloaderFadeOut 
         99%
             opacity: 0 
         100% 
@@ -515,9 +515,6 @@ body.light
                 @media (orientation: portrait)
                     top: auto 
                     bottom: 130px 
-                    width: 33px 
-                    height: 33px
-                    font-size: 1.5rem
                     transform: none
             .changeImgBtnLeft
                 left: 15px
@@ -538,9 +535,6 @@ body.light
                 @media (max-width: 1024px)
                     top: 80px
                 @media (orientation: portrait)
-                    height: 33px
-                    width: 33px 
-                    font-size: 1.5rem
                     top: 120px
                     bottom: auto
             .zoomImage 

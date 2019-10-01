@@ -70,8 +70,8 @@ body.light {
   left: 0;
   background-color: #ebbd34;
   z-index: 2;
-  -webkit-animation: fadeOut 1s linear forwards 2.5s;
-          animation: fadeOut 1s linear forwards 2.5s;
+  -webkit-animation: preloaderFadeOut 1s linear forwards 2.5s;
+          animation: preloaderFadeOut 1s linear forwards 2.5s;
 }
 
 @media (max-width: 900px) {
@@ -82,7 +82,7 @@ body.light {
   }
 }
 
-@-webkit-keyframes fadeOut {
+@-webkit-keyframes preloaderFadeOut {
   99% {
     opacity: 0;
   }
@@ -93,7 +93,7 @@ body.light {
   }
 }
 
-@keyframes fadeOut {
+@keyframes preloaderFadeOut {
   99% {
     opacity: 0;
   }
@@ -1006,9 +1006,6 @@ body.light {
   .main .mainSection.gallery .zoom .changeImgBtn, .main .mainSection.gallery .zoom .closeImgBtn {
     top: auto;
     bottom: 130px;
-    width: 33px;
-    height: 33px;
-    font-size: 1.5rem;
     -webkit-transform: none;
             transform: none;
   }
@@ -1063,9 +1060,6 @@ body.light {
 
 @media (orientation: portrait) {
   .main .mainSection.gallery .zoom .closeImgBtn {
-    height: 33px;
-    width: 33px;
-    font-size: 1.5rem;
     top: 120px;
     bottom: auto;
   }
