@@ -1,1 +1,19 @@
-
+.preloader
+    position: fixed
+    width: 100vw 
+    height: 100vh
+    top: 0 
+    left: 0
+    background-color: $yellow
+    z-index: 2
+    animation: preloaderFadeOut 1s linear forwards 2.5s
+    @media (max-width: 900px)
+        animation: none 
+        display: none
+    @keyframes preloaderFadeOut 
+        99%
+            opacity: 0 
+        100% 
+            opacity: 0
+            display: none 
+            visibility: hidden 

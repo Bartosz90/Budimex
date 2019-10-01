@@ -1,0 +1,97 @@
+.main 
+    .mainSection.gallery 
+        h3 
+        margin-top: 130px
+        @media (max-width: 1024px)
+            margin-top: 20px
+        .galleryContainer 
+            width: 90% 
+            +flexCenter()
+            @media (orientation: portrait)
+                margin-top: 20px
+            .img 
+                width: 18%
+                margin: 20px 
+                border: 2px solid $yellow
+                border-radius: 4px
+                @media (max-width: 1024px)
+                    width: 30%
+                    margin: 8px
+                @media (max-width: 540px)
+                    width: 28%
+                @media (orientation: portrait)
+                    width: 45%
+                @media (orientation: portrait) and (max-width: 321px)
+                    width: 90%
+                img 
+                    width: 100%
+                    cursor: pointer
+        .zoom 
+            position: fixed 
+            top: 0
+            left: 0
+            width: 100vw 
+            height: 100vh
+            z-index: 150
+            background-color: rgba(43,42,38,.9)
+            +flexCenter()
+            visibility: hidden
+            opacity: 0
+            transition: .3s linear
+            .changeImgBtn, .closeImgBtn
+                position: absolute 
+                top: 50% 
+                +flexCenter()
+                padding: 0
+                width: 40px 
+                height: 40px
+                transform: translateY(-50%)
+                border-radius: 4px
+                font-size: 1.7rem
+                &:hover 
+                    color: $dark
+                @media (orientation: portrait)
+                    top: auto 
+                    bottom: 130px 
+                    transform: none
+            .changeImgBtnLeft
+                left: 15px
+                @media (orientation: portrait)
+                    left: 100px
+            .changeImgBtnRight
+                right: 25px
+                @media (orientation: portrait)
+                    right: 100px
+            .closeImgBtn 
+                +flexCenter()
+                padding: 0
+                width: 40px 
+                height: 40px
+                right: 25px 
+                top: 150px
+                transform: none
+                @media (max-width: 1024px)
+                    top: 80px
+                @media (orientation: portrait)
+                    top: 120px
+                    bottom: auto
+            .zoomImage 
+                width: 80%
+                border: 2px solid $yellow
+                border-radius: 4px
+                @media (max-width: 1024px)
+                    width: 60%
+                @media (orientation: portrait)
+                    width: 95%
+                img 
+                    width: 100%
+            .zoomImage.animate 
+                animation: fadeInOut .8s linear 
+                @keyframes fadeInOut 
+                    50% 
+                        opacity: 0 
+                    100% 
+                        opacity: 1
+        .zoom.active 
+            opacity: 1
+            visibility: visible 

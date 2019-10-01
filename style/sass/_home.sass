@@ -1,0 +1,26 @@
+.main 
+    .mainSection.home 
+        h1 
+            width: 100% 
+            margin-bottom: 20px
+            padding: 0 20px
+            font-size: 3rem
+            text-align: center
+            @media (max-width: 1024px)
+                font-size: 2.5rem
+        p 
+            padding: 0 350px
+            text-align: center
+            font-size: 2rem
+            @media (max-width: 1024px)
+                padding: 0 20px
+                font-size: 1.5rem
+        span 
+            position: relative
+            padding: 0 5px
+            cursor: pointer
+            border-bottom: 3px solid $yellow
+            overflow: hidden
+            &:hover
+                color: $yellowHover 
+                border-bottom-color: $yellowHover
