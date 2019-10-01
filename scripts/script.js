@@ -149,3 +149,49 @@ $(".play").on("click", function() {
 $(".stop").on("click", function() {
   owl.trigger("stop.owl.autoplay");
 });
+
+//gallery
+
+const gallery = document.querySelector(".gallery");
+const img = document.querySelectorAll(".img");
+const zoomedImgContainer = document.querySelector(".zoom");
+const zoomedImg = document.querySelector(".zoomImage img");
+const arrows = document.querySelectorAll(".changeImgBtn");
+const closeZoom = document.querySelector(".closeImgBtn");
+let imgIndex = 1;
+
+img.forEach(img => img.addEventListener("click", zoomImg));
+
+function zoomImg(e) {
+  imgIndex = Number(e.target.dataset.position);
+  zoomedImg.attributes.src.value = `img/gallery/${imgIndex}.jpg`;
+  zoomedImgContainer.classList.add("active");
+  gallery.style.zIndex = "150";
+}
+
+arrows.forEach(arrow => arrow.addEventListener("click", changeImg));
+
+function changeImg(e) {
+  switch (e.target.dataset.direction) {
+    case "left":
+      if (imgIndex === 1) imgIndex = 20;
+      else imgIndex--;
+      break;
+    case "right":
+      if (imgIndex === 20) imgIndex = 1;
+      else imgIndex++;
+      break;
+  }
+  document.querySelector(".zoomImage").classList.add("animate");
+  setTimeout(() => {
+    zoomedImg.attributes.src.value = `img/gallery/${imgIndex}.jpg`;
+  }, 400);
+  setTimeout(() => {
+    document.querySelector(".zoomImage").classList.remove("animate");
+  }, 800);
+}
+
+closeZoom.addEventListener("click", () => {
+  gallery.style.zIndex = "0";
+  zoomedImgContainer.classList.remove("active");
+});
