@@ -17,7 +17,7 @@ window.onload = function() {
     nav.style.position = "fixed";
     nav.style.zIndex = "20";
     main.style.position = "static";
-  }, 2500);
+  }, 2200);
 };
 
 main.addEventListener("click", () => {
